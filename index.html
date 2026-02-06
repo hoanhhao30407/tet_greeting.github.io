@@ -129,7 +129,7 @@
       }
 
       .title {
-        font-size: 28px;
+        font-size: 20px;
         color: #d63031;
         margin-bottom: 20px;
         margin-top: -5px;
@@ -346,10 +346,10 @@
       }
 
       .fabric-banner.left {
-        left: 18px;
+        left: 10px;
       }
       .fabric-banner.right {
-        right: 18px;
+        right: 10px;
       }
 
       .fabric-banner .banner-ribbon {
@@ -377,7 +377,17 @@
       }
 
       .fabric-banner {
-        animation: bannerSway 4s ease-in-out infinite;
+        animation: slideInBanner 0.8s ease-out forwards;
+      }
+      @keyframes slideInBanner {
+        from {
+          opacity: 0;
+          transform: translateX(var(--direction, 1) * -200px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
       @keyframes bannerSway {
         0%,
@@ -397,13 +407,14 @@
           width: 65px;
           height: 110px;
           border-radius: 4px;
+          z-index: 5;
         }
 
         .fabric-banner.left {
-          left: 4px;
+          left: -70px;
         }
         .fabric-banner.right {
-          right: 4px;
+          right: -70px;
         }
 
         .fabric-banner .banner-ribbon {
@@ -463,7 +474,7 @@
         }
 
         .title {
-          font-size: 24px;
+          font-size: 18px;
           margin-bottom: 15px;
         }
 
@@ -528,9 +539,9 @@
 
     <div class="container">
       <div class="content">
-        <div class="title">❤️ Chúc Mừng Năm Mới 2026 ❤️🎉</div>
+        <div class="title">❤️🎉Chúc Mừng Năm Mới  🎉❤️</div>
 
-        <div class="hearts-decoration">💕 💕 💕</div>
+        <div class="hearts-decoration">💕 2026 💕</div>
 
         <div class="message">Gửi lời chúc đến em yêu của anh</div>
 
