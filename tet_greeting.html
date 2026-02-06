@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tết 2026 - Chúc Mừng Năm Mới</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 50%, #ff6b6b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.8s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fireworks {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0);
+            }
+        }
+
+        .title {
+            font-size: 48px;
+            color: #d63031;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #f39c12;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .lantern {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateX(-10px) rotate(-2deg); }
+            50% { transform: translateX(10px) rotate(2deg); }
+        }
+
+        .greeting-message {
+            font-size: 20px;
+            color: #333;
+            line-height: 1.8;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #ffe4e1 0%, #fff0f5 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #d63031;
+        }
+
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d63031, #e84118);
+            box-shadow: 0 4px 15px rgba(214, 48, 49, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(214, 48, 49, 0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+        }
+
+        .lucky-number {
+            font-size: 18px;
+            color: #d63031;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .decoration {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            font-size: 40px;
+        }
+
+        .firework-icon {
+            animation: twinkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+
+        .name-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .name-input::placeholder {
+            color: #bdc3c7;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 36px;
+            }
+            .subtitle {
+                font-size: 18px;
+            }
+            .greeting-message {
+                font-size: 16px;
+            }
+            .container {
+                margin: 20px;
+            }
+        }
+
+        .snow {
+            position: fixed;
+            top: -10px;
+            color: #fff;
+            font-size: 2em;
+            animation: snowfall 10s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decoration">
+            <span class="firework-icon">🧧</span>
+            <span class="firework-icon">🎆</span>
+            <span class="firework-icon">🧧</span>
+        </div>
+
+        <div class="title">Chúc Mừng Năm Mới</div>
+        <div class="subtitle">Tết Âm Lịch 2026</div>
+
+        <div class="lantern">🏮</div>
+
+        <div class="message-box">
+            <div class="greeting-message">
+                Chúc một người yêu thương của tôi
+                <br><br>
+                <span id="personalName" style="color: #d63031; font-weight: bold;">bạn yêu</span> luôn
+                <br>
+                ✨ Vui vẻ, hạnh phúc trong năm mới
+                <br>
+                ✨ Thành công và may mắn
+                <br>
+                ✨ Sức khỏe dồi dào, tình yêu thắm thiết
+            </div>
+        </div>
+
+        <div class="lucky-number" id="luckyNumber">
+            🍀 Số may mắn hôm nay: <span id="number">7</span> 🍀
+        </div>
+
+        <div style="margin: 20px 0;">
+            <label style="color: #333; font-size: 14px;">Nhập tên người yêu:</label>
+            <input 
+                type="text" 
+                class="name-input" 
+                id="nameInput" 
+                placeholder="Nhập tên của em..."
+                maxlength="20"
+            >
+        </div>
+
+        <div class="decoration">
+            <span class="firework-icon">✨</span>
+            <span class="firework-icon">💝</span>
+            <span class="firework-icon">✨</span>
+        </div>
+
+        <div class="button-container">
+            <button class="btn-primary" onclick="sendGreeting()">Gửi Lời Chúc ❤️</button>
+            <button class="btn-secondary" onclick="createFireworks()">Pháo Hoa 🎆</button>
+            <button class="btn-primary" onclick="generateLuckyNumber()">Số May Mắn 🍀</button>
+        </div>
+    </div>
+
+    <script>
+        // Generate random lucky number
+        function generateLuckyNumber() {
+            const number = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('number').textContent = number;
+            createFireworks();
+        }
+
+        // Update personal name
+        document.getElementById('nameInput').addEventListener('input', function(e) {
+            const name = e.target.value || 'bạn yêu';
+            document.getElementById('personalName').textContent = name;
+        });
+
+        // Create fireworks effect
+        function createFireworks() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'fireworks';
+                    
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    
+                    firework.style.left = x + 'px';
+                    firework.style.top = y + 'px';
+                    
+                    const colors = ['#ffd700', '#ff6b6b', '#f39c12', '#e74c3c', '#3498db'];
+                    firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    const angle = (Math.random() * Math.PI * 2);
+                    const velocity = 50 + Math.random() * 150;
+                    const tx = Math.cos(angle) * velocity;
+                    const ty = Math.sin(angle) * velocity;
+                    
+                    firework.style.setProperty('--tx', tx + 'px');
+                    firework.style.setProperty('--ty', ty + 'px');
+                    
+                    document.body.appendChild(firework);
+                    
+                    setTimeout(() => firework.remove(), 1000);
+                }, i * 30);
+            }
+        }
+
+        // Send greeting with animation
+        function sendGreeting() {
+            const name = document.getElementById('nameInput').value || 'bạn yêu';
+            alert(`❤️ Lời chúc Tết đã được gửi đến ${name} ❤️\n\nChúc em một năm mới thật đặc biệt! 🎊`);
+            createFireworks();
+        }
+
+        // Generate initial lucky number
+        generateLuckyNumber();
+
+        // Create snow effect
+        function createSnow() {
+            const snowContainer = document.body;
+            for (let i = 0; i < 15; i++) {
+                const snow = document.createElement('div');
+                snow.className = 'snow';
+                snow.textContent = '❄️';
+                snow.style.left = Math.random() * 100 + '%';
+                snow.style.animationDuration = (5 + Math.random() * 5) + 's';
+                snow.style.animationDelay = Math.random() * 2 + 's';
+                snowContainer.appendChild(snow);
+            }
+        }
+
+        createSnow();
+    </script>
+</body>
+</html>
